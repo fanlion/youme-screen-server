@@ -2,7 +2,7 @@
  * @Author: fan.li
  * @Date: 2019-01-07 14:20:42
  * @Last Modified by: fan.li
- * @Last Modified time: 2019-01-07 15:04:09
+ * @Last Modified time: 2019-01-07 15:10:13
  */
 
 const express = require("express");
@@ -35,7 +35,7 @@ router.get("/getPublishAddress/:userid", function(req, res, next) {
       code: 0,
       msg: "ok",
       des: "ok",
-      data: data
+      result: data
     });
   }).catch((err) => {
     res.status(500).json({
@@ -69,7 +69,7 @@ router.get("/getLivePlayAddress/:userid", function(req, res, next) {
       code: 0,
       msg: "ok",
       des: "ok",
-      data: data
+      result: data
     });
   }).catch((err) => {
     res.status(500).json({
@@ -105,7 +105,7 @@ router.get("/getPublishHistory/:userid/:starttime/:endtime", function(req, res, 
       code: 0,
       msg: "ok",
       des: "ok",
-      data: data
+      result: data
     });
   }).catch((err) => {
     res.status(500).json({
@@ -142,7 +142,7 @@ router.get("/getPlaybackURL/:userid/:starttime/:endtime", function(req, res, nex
       code: 0,
       msg: "ok",
       des: "ok",
-      data: data,
+      result: data,
     });
   }).catch((err) => {
     res.status(500).json({
