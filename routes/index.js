@@ -2,7 +2,7 @@
  * @Author: fan.li
  * @Date: 2019-01-07 14:20:42
  * @Last Modified by: fan.li
- * @Last Modified time: 2019-01-07 15:10:13
+ * @Last Modified time: 2019-01-07 15:23:56
  */
 
 const express = require("express");
@@ -96,8 +96,8 @@ router.get("/getPublishHistory/:userid/:starttime/:endtime", function(req, res, 
   const params = {
     Hub: "youmetest",
     StreamKey: userid,
-    StartTimestamp: starttime,
-    EndTimestamp: endtime
+    StartTimestamp: +starttime,
+    EndTimestamp: +endtime
   };
 
   YoumeServerSDKInstance.sendPost("video", "get_history_activity", params).then((data) => {
@@ -133,8 +133,8 @@ router.get("/getPlaybackURL/:userid/:starttime/:endtime", function(req, res, nex
   const params = {
     Hub: "youmetest",
     StreamKey: userid,
-    StartTimestamp: starttime,
-    EndTimestamp: endtime
+    StartTimestamp: +starttime,
+    EndTimestamp: +endtime
   };
 
   YoumeServerSDKInstance.sendPost("video", "save_play_back", params).then((data) => {
